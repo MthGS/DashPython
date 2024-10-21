@@ -1,4 +1,4 @@
 # DashPython
 Elaborar dashboards utilizando python, seguindo planilhas fictícias mas simulando vendas de empresas. 
 
-Utilizando o Streamlit para a hospedagem dos Dashboards e elaboração com Python.
+Com a ferramenta do Streamlit, adicionando as diferentes ações em MontagemPG.py e para abrir janela da página, "streamlit run nome script.py".
