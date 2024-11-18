@@ -3,17 +3,6 @@ import pandas as pd
 from datetime import datetime
 import webbrowser
 
-def gtm_script():
-    return """
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WLNFTFFH');</script> 1 
-    """
-
-st.html(gtm_script(), height=0)
-
 if "data" not in st.session_state:
     df_data = pd.read_csv("fc25data/all_players.csv", index_col=0)
     df_data = df_data.sort_values(by="OVR", ascending=False)
