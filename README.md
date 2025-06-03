@@ -8,9 +8,10 @@ Nesse projeto utilizando Python, Streamlit e uma base de dados em CSV, tratamos 
 * [Pré-requisitos](#pré-requisitos)
 * [Como Rodar/Instalação](#como-rodarinstalação)
 * [Como Usar](#como-usar)
-* [Testes](#testes) * [Como Contribuir](#como-contribuir) * [Autores](#autores)
-* [Licença](#licença)
-* [Agradecimentos](#agradecimentos) ## 🧐 Sobre o Projeto
+* [Autores](#autores)
+* [Agradecimentos](#agradecimentos)
+
+## 🧐 Sobre o Projeto
 
 Descreva seu projeto com mais detalhes.
 * Qual problema ele resolve?
