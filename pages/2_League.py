@@ -1,0 +1,26 @@
+import streamlit as st
+import pandas as pd
+
+ #Configuração inicial do Streamlit
+st.set_page_config(
+    page_title="Leagues",
+    page_icon="🏆",
+    layout="wide"
+)
+
+ #Verifica se os dados estão disponíveis no estado da sessão
+if "data" in st.session_state:
+    df_data = pd.read_csv("fc25data/all_players.csv", index_col=0)
+    df_leagues = st.session_state["data"]
+    Liga = df_leagues["League"].value_counts().index
+    selected_league = st.sidebar.selectbox("Liga", Liga)
+
+    # Filtra as informações da liga selecionada
+    league_stats = df_leagues[df_leagues["League"] == selected_league].iloc[0]
+
+    # Exibe o título do país e da liga
+    #selected_country = league_stats["Nation"]  # Supondo que exista uma coluna "Country"
+    #st.title(selected_country)
+    st.write(selected_league)
+else:
+    st.error("Os dados não estão disponíveis no estado da sessão.")
