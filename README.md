@@ -13,6 +13,8 @@ Nesse projeto utilizando Python, Streamlit e uma base de dados em CSV, tratamos 
 
 ## 🧐 Sobre o Projeto
 
+![Image](https://github.com/user-attachments/assets/5a9d4b52-e80e-4381-9d60-6fc8203bb16d)
+
 Descreva seu projeto com mais detalhes.
 * Qual problema ele resolve?
 * Qual foi sua motivação?
