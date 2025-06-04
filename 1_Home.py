@@ -3,7 +3,6 @@ import pandas as pd
 from datetime import datetime
 import webbrowser
 import streamlit.components.v1 as components
-import plotly_express as px
 from PIL import Image
 import plotly.graph_objects as go
 
