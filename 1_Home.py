@@ -34,6 +34,3 @@ st.download_button(
    "text/csv",
    key='download-csv'
 )
-    """, unsafe_allow_html=True)
-
-st.markdown('</div>', unsafe_allow_html=True)
