@@ -1,6 +1,6 @@
 ## Database FC25 ⚽
 
-Nesse projeto utilizando Python, Streamlit e uma base de dados em CSV, tratamos os dados em páginas diferentes para cada tema destaque e mostrando algumas das principais informações sobre Ligas, Times e Jogadoras do FC25.
+Nesse projeto utilizando Python, Streamlit, IA e uma base de dados do FC25, tratamos os dados em páginas diferentes para cada tema destaque e mostrando algumas das principais informações sobre Ligas, Times e Jogadoras do FC25.
 
 ![Image](https://github.com/user-attachments/assets/c26fffb6-7202-4700-b419-5387918b952a)
 ![Image](https://github.com/user-attachments/assets/f7f06ca8-e2fb-499d-bd8d-893303664c49)
@@ -30,8 +30,9 @@ Liste as principais funcionalidades do seu projeto.
 Liste as principais tecnologias, frameworks, bibliotecas e ferramentas que você usou.
 * Linguagens: Python 3.9
 * Framework: Streamlit
-* Bibliotecas importantes Pandas, pyplot, streamlit, altair e PIL
-* Banco de Dados: CSV (trabalhando com a possibilidade de extrair dados via API e usar o MySQL)
+* Bibliotecas importantes Pandas, pyplot, streamlit, altair, PIL, pycountry, google.generativeai e serpapi
+* Banco de Dados: CSV editados com PotGreSQL(trabalhando com a possibilidade de extrair dados via API e usar o MySQL)
+* Api´s: Google AI Studio SerpAPI 
 * Ferramentas de Desenvolvimento: VSCode, Git e Google Sheets
 
 ## ✅ Pré-requisitos
