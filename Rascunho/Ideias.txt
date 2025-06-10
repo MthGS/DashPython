@@ -1,0 +1,39 @@
+#Formatação condicional para placar de partidas(Streamlit)
+
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Configuração inicial
+st.title("Dashboard de Placar com Formatação Condicional")
+
+# Inputs: Você pode ajustar dinamicamente os placares
+time_a = st.number_input("Gols do Time A", value=0, step=1, min_value=0)
+time_b = st.number_input("Gols do Time B", value=0, step=1, min_value=0)
+
+# Exibição do Placar
+st.write(f"**Placar:** Time A {time_a} x {time_b} Time B")
+
+# Criação da Linha Condicional
+fig, ax = plt.subplots(figsize=(6, 2))
+
+# Configurando a linha para mostrar vantagem
+if time_a > time_b:
+    ax.plot([1, 0], [0.5, 0.5], color="green", linewidth=10, label="Vantagem Time A")
+elif time_b > time_a:
+    ax.plot([0, 1], [0.5, 0.5], color="green", linewidth=10, label="Vantagem Time B")
+else:
+    ax.plot([0, 1], [0.5, 0.5], color="yellow", linewidth=10, label="Empate")
+
+# Configurando os limites e removendo eixos
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.axis("off")
+
+# Legenda
+ax.legend(loc="center", fontsize=12)
+
+# Mostrar gráfico
+st.pyplot(fig)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
