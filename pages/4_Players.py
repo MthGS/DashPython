@@ -3,6 +3,10 @@ import pandas as pd
 import altair as alt
 from vega_datasets import data
 import matplotlib.pyplot as plt
+from auth import carregar_chaves_e_configurar_apis
+
+#CHAMA a função para obter as chaves/clientes
+config_apis = carregar_chaves_e_configurar_apis()
 
 df_data = pd.read_csv("fc25data/all_players_update.csv")
 male = pd.read_csv("fc25data/male.csv")

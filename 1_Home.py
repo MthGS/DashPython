@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 import pycountry
+from auth import carregar_chaves_e_configurar_apis 
+
+#CHAMA a função para obter as chaves/clientes
+config_apis = carregar_chaves_e_configurar_apis()
 
 st.set_page_config(
     page_title="FC 25 Data",

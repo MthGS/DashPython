@@ -1,6 +1,10 @@
 import pandas as pd
 import streamlit as st
 import altair as alt
+from auth import carregar_chaves_e_configurar_apis
+
+#CHAMA a função para obter as chaves/clientes
+config_apis = carregar_chaves_e_configurar_apis()
 
 # Carrega os dados uma vez
 @st.cache_data
