@@ -4,9 +4,9 @@ import altair as alt
 from vega_datasets import data
 import matplotlib.pyplot as plt
 
-df_data = pd.read_csv("fc25data/all_players.csv", index_col=0)
-male = pd.read_csv("fc25data/male_players.csv")
-female = pd.read_csv("fc25data/female_players.csv")
+df_data = pd.read_csv("fc25data/all_players_update.csv")
+male = pd.read_csv("fc25data/male.csv")
+female = pd.read_csv("fc25data/female.csv")
 
 st.set_page_config(
     page_title="Players",
