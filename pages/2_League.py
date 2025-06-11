@@ -1,24 +1,22 @@
 import streamlit as st
 import pandas as pd
 import google.generativeai as genai
-from serpapi import GoogleSearch # <-- NOVO: Importa a biblioteca correta
+from serpapi import GoogleSearch 
 
-#Configuração inicial do Streamlit
 st.set_page_config(
     page_title="Leagues",
     page_icon="🏆",
     layout="wide"
 )
 
-# --- CONFIGURAÇÃO DAS APIS ---
+#API
 try:
     genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 except Exception as e:
     st.error("Chave da API do Google não encontrada. Verifique seu arquivo .streamlit/secrets.toml")
     st.stop()
 
-# --- FUNÇÕES ---
-
+#FUNÇÕES
 @st.cache_data
 def load_data_from_csv(file_path="fc25data/all_players_update.csv"):
     """Carrega o CSV principal com os dados dos jogadores."""
@@ -28,17 +26,17 @@ def load_data_from_csv(file_path="fc25data/all_players_update.csv"):
         st.error(f"Erro Crítico: Arquivo '{file_path}' não foi encontrado.")
         return None
 
-# ### FUNÇÃO DE BUSCA DE IMAGEM FINAL USANDO SERPAPI ###
+#FUNÇÃO DE BUSCA DE IMAGEM
 @st.cache_data
 def get_league_logo(league_name):
     """Busca a URL do logo de uma liga usando a API da SerpApi."""
     with st.spinner(f"Buscando logo para a {league_name}..."):
         try:
             params = {
-              "q": f"{league_name} official logo", # O termo da busca
-              "engine": "google_images",          # Diz para buscar no Google Imagens
-              "ijn": "0",                         # Página de resultados
-              "api_key": st.secrets["SERPAPI_API_KEY"] # Sua chave da SerpApi
+              "q": f"{league_name} official logo", 
+              "engine": "google_images",          
+              "ijn": "0",                         
+              "api_key": st.secrets["SERPAPI_API_KEY"] 
             }
 
             search = GoogleSearch(params)
@@ -53,7 +51,7 @@ def get_league_logo(league_name):
             st.warning(f"Não foi possível buscar o logo via SerpApi: {e}")
             return None
 
-# ###    """Gera uma descrição da liga usando a IA do Gemini."""
+#"""Gera uma descrição da liga usando a IA do Gemini."""
 @st.cache_data
 def get_league_description_from_gemini(league_name):
     model = genai.GenerativeModel('gemini-1.5-flash-latest')
@@ -66,8 +64,7 @@ def get_league_description_from_gemini(league_name):
             st.warning(f"Não foi possível obter a descrição da IA: {e}")
             return "Descrição da IA indisponível no momento."
 
-# --- LÓGICA PRINCIPAL DO APP ---
-
+#LÓGICA PRINCIPAL DO APP
 df_leagues_data = load_data_from_csv()
 
 if df_leagues_data is None:

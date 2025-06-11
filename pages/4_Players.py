@@ -14,11 +14,6 @@ st.set_page_config(
     layout="wide"
 )
 
-#funciona   1º
-#df_data = st.session_state["data"]
-#clube = df_data["Team"].value_counts().index
-#team = st.sidebar.selectbox("Clube", clube)
-
 st.logo("https://th.bing.com/th/id/OIP.GfYS4X_NrkWCHD5bvAoPegHaAl?rs=1&pid=ImgDetMain")
  
 df_data = st.session_state["data"]
@@ -35,7 +30,6 @@ player = st.sidebar.selectbox("jogador", players)
 
 player_stats = df_data[df_data["Name"] == player].iloc[0]
 #Localiza url no site EA FC25, falta adicionar .png no final, para carregar somente a imagem.
-#st.image(player_stats["url"])
 st.title(f"{player_stats["Name"]}")
 
 st.markdown(f"**Liga:** {player_stats["League"]}")
@@ -56,5 +50,3 @@ def bar_chart(player_stats):
     plt.title("Player Stats")
     plt.xticks(rotation=45)
     st.pyplot()
-
-#bar_chart_from_csv("player_stats")
