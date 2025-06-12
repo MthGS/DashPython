@@ -6,3 +6,4 @@ pandas==2.3.0
 pycountry==24.6.1
 streamlit==1.38.0
 vega_datasets==0.9.0
+google-generativeai==0.3.0
